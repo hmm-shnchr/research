@@ -155,3 +155,15 @@ class Nesterov:
             params[ key ] += self.momentum * self.momentum * self.v[ key ]
             params[ key ] -= ( 1 + self.momentum ) * self.lr * grads[ key ]
 
+
+def set_optimizer(opt, lr):
+    if opt == "SGD":
+        return SGD(lr = lr)
+    if opt == "Momentum":
+        return Momentum(lr = lr, momentum = 1.0-lr)
+    if opt == "Adam":
+        return Adam(lr = lr)
+    if opt == "AdaBound":
+        return AdaBound(lr = 1.0, final_lr = lr)
+    else:
+        return None
