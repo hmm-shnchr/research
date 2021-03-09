@@ -6,8 +6,9 @@ def get_save_dir(LP):
         dirname += "BatchNorm_"
     dirname += LP.loss_func + "_"
     dirname += LP.learning_rate + "lr_"
-    dirname += str(LP.epoch) + "_"
+    dirname += str(LP.epoch) + "epoch_"
     if LP.normalize_format != "None":
         dirname += LP.normalize_format + "_"
-    dirname += LP.extract_dataset + "/"
+    dirname += LP.extract_dataset + "_"
+    dirname += str(LP.learn_num) + "/"
     return dirname
