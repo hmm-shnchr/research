@@ -1,4 +1,4 @@
-from relative_error import relative error
+from relative_error import relative_error
 import matplotlib.pyplot as plt
 import numpy as np
 
